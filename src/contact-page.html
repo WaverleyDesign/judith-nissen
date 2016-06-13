@@ -1,0 +1,46 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="text-page-template.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="contact-page">
+
+  <template>
+
+    <style include="shared-styles">
+      paper-input, paper-textarea {
+        outline: none;
+      }
+
+      paper-input, paper-textarea {
+        --paper-input-container-color: var(--app-secondary-color);
+        --paper-input-container-focus-color: var(--app-primary-color);
+        --paper-input-container-input-color: var(--app-secondary-color);
+      }
+    </style>
+
+    <style include="iron-flex iron-flex-alignment"></style>
+
+
+
+    <text-page-template heading="Contact">
+        <h2>Get in touch</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <paper-input label="Name / Organisation"></paper-input>
+        <paper-input label="Email Address"></paper-input>
+        <paper-textarea label="Your Message."></paper-textarea>
+    </text-page-template>
+
+  </template>
+  <script>
+  Polymer({
+    is: 'contact-page'
+  });
+  </script>
+</dom-module>

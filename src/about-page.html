@@ -1,0 +1,82 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="text-page-template.html">
+<link rel="import" href="what-we-do.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="about-page">
+
+  <template>
+
+    <style include="shared-styles">
+
+    </style>
+
+    <style include="iron-flex iron-flex-alignment"></style>
+
+    <text-page-template heading="About">
+      <p>
+      I provide professional historical and heritage services for many different audiences and clients, ranging from individuals and families, to corporations, community groups, institutions and government. Services include: </p>
+      <ul style="padding-left: 16px;">
+        <li>
+          Researching – identifying sources and locating information on a wide variety of historical topics
+        </li>
+        <li>
+          Analysing – assembling information from a wide variety of sources, and drawing out themes and stories
+        </li>
+        <li>
+          Writing – presenting information in a variety of formats including producing books from initial concept and research, right through to liaison with designers and printers, editing and indexing;
+        </li>
+        <li>
+          Public speaking – formal and informal public speeches and client presentations on current and past projects, and subjects of popular interest;
+        </li>
+        <li>
+          Training in historical skills and resources;
+        </li>
+        <li>
+          Expert witness reports – building history reports for the Queensland Planning & Environment Court, and others.
+        </li>
+      </ul>
+      <a href="{{baseUrl}}projects" data-route="projects">
+        <paper-button>See Past Projects</paper-button>
+      </a>
+      <p>
+        Two decades working as a professional freelance historian, along with tertiary qualifications in Australian and applied history, mean that I bring broad historical knowledge, objectivity, and strong research and writing skills to your history project.
+      </p>
+      <p>
+        Commissions for private and corporate clients have included histories of organisations, buildings and families, heritage citations and significance assessments, archive assessments and reports, land tenure research, and museum displays.
+      </p>
+      <h4><b>Academic credentials</b></h4>
+      <ul>
+<li>Bachelor of Arts UQ 1985</li>
+<li>Post-graduate Diploma in Arts UQ 1996</li>
+<li>Master of Arts UQ 1999.</li>
+      </ul>
+      <h4><b>Professional and Community Involvements</b></h4>
+      <ul>
+        <li>
+          Professional Historians Australia and PHA(Qld) – committee memberships from 2002; conference organiser 2009 & 2014; currently national President
+        </li>
+        <li>
+          Royal Historical Society of Queensland – councillor
+        </li>
+        <li>
+          Engineering Heritage Queensland – committee member from 2009
+        </li>
+        <li>
+        Mt Crosby and Moggill Historical Societies – founding and continuing committee member
+        </li>
+        <li>
+          Member of Toowoomba Historical Society, National Trust of Queensland, Friends of Fryer (UQ)
+        </li>
+      </ul>
+    </text-page-template>
+
+  </template>
+  <script>
+  Polymer({
+    is: 'about-page'
+  });
+  </script>
+</dom-module>

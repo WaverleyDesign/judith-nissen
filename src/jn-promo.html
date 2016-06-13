@@ -1,0 +1,253 @@
+
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
+<link rel="import" href="../bower_components/neon-animation/animations/fade-in-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<dom-module id="jn-promo">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+      .promotion-headline {
+        font-size: 36px;
+        font-weight: 300;
+      }
+
+      .flexchild {
+          @apply(--layout-flex);
+        }
+        a.promotion-button {
+          color: white;
+          text-decoration: none;
+        }
+
+        .promotion {
+          color: white;
+          padding: 16px;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+
+        iron-image {
+          @apply(--shadow-elevation-4dp);
+          border: 1px solid #e0e0e0
+        }
+
+        paper-icon-button {
+          text-shadow: 2px 2px 2px #37474F;
+        }
+
+
+
+        .fullwidth {
+          width: 100%;
+        }
+
+        .promotion-text, .promotion-headline {
+          margin: 0px;
+          margin-bottom: 8px;
+          margin-left: 16px;
+          text-shadow: 2px 2px 2px #37474F;
+        }
+
+        .promotion-text {
+          font-size: 100%;
+          margin-top:8px;
+          font-weight: 300;
+        }
+        paper-button.promotion-button {
+        color: white;
+        text-shadow: 2px 2px 2px #37474F;
+        }
+
+        neon-animated-pages {
+          height: 240px;
+        }
+
+        .imageOverlay {
+          background-image: url(../images/other/homebannertwo.jpg);
+        }
+
+        .imageOverlay:nth-child(1) {
+          opacity: 1
+        }
+
+
+        .overlay {
+          position: absolute;
+          z-index: 16;
+          height: 232px;
+          color: white;
+          @apply(--layout-vertical);
+          @apply(--layout-center-justified);
+        }
+
+        .container {
+          @apply(--layout-horizontal);
+          color: white;
+        }
+
+        .image {
+          width: 140px;
+          height: 200px;
+        }
+
+    </style>
+    <div class="backgroundSheet">
+
+<div class="imageOverlay">
+
+
+      <neon-animated-pages
+      entry-animation="fade-in-animation"
+      exit-animation="fade-out-animation" id="pages" selected="0">
+      <template is="dom-repeat" items="{{promos}}" as="promo" index-as="index">
+        <section>
+          <div class="promotion horizontal layout">
+            <div class="image">
+              <iron-image style="width:140px; height:200px;
+               background-color: lightgray;" sizing="cover"
+               preload="false" fade src="{{promo.image}}"></iron-image>
+            </div>
+
+            <div class="fullwidth vertical layout">
+              <div>
+                <h1 class="page-title promotion-headline white">{{promo.headline}}</h1>
+                <h5 class="promotion-text">
+                  {{promo.description}}
+                </h5>
+              </div>
+              <span class="flexchild"></span>
+              <div class="horizontal end-justified layout">
+                <div>
+                  <a class="promotion-button" href$="{{baseUrl}}/search/{{promo.linkTo}}">
+                  <paper-button class="promotion-button">
+                    see more
+                  </paper-button>
+                </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </template>
+    </neon-animated-pages>
+    <div class="toolbar container">
+      <paper-icon-button class="" on-tap="prevSlide" icon="chevron-left"></paper-icon-button>
+      <span class="flexchild container">
+      </span>
+      <paper-icon-button class="" on-tap="nextSlide" icon="chevron-right"></paper-icon-button>
+    </div>
+
+    </div>
+    </div>
+
+
+
+
+  </template>
+  <script>
+    Polymer({
+      is: 'jn-promo',
+      properties: {
+        headline: {
+          type: String,
+        },
+        description: {
+          type: String,
+        },
+        image: {
+          type: String,
+        },
+        linkTo: {
+          type: String,
+        },
+        promos: {
+          type: Array,
+          notify: true,
+        },
+      },
+      nextSlide: function() {
+        this.$.pages.selectNext();
+      },
+      prevSlide: function() {
+        this.$.pages.selectPrevious();
+      },
+      ready: function() {
+        this.promos = [
+          {headline: 'Biography', description: 'Family history, research',
+          image: '../images/projects/honouryourname.jpg', linkTo: 'Biography & Family History'},
+          {headline: 'Displays', description: 'Museums, interpretation',
+          image: '../images/projects/welcome-displays.jpg', linkTo: 'Display and Exhibitions'},
+          {headline: 'Heritage', description: 'Houses, commercial buildings, gardens',
+          image: '../images/projects/welcome-heritage.jpg', linkTo: 'Heritage'},
+          {headline: 'Archives', description: 'Significance assessment, research',
+          image: '../images/projects/welcome-archives.jpg', linkTo: 'Archival Research & Significance Assessments'},
+          {headline: 'Historical Miscellany', description: 'Lands, pastoralism, engineering, digital stories',
+          image: '../images/projects/welcome-misc.bmp', linkTo: 'Historical Miscellany'},
+        ];
+this.async(function(){this.$.pages.selectNext()}, 10000);
+this.async(function(){this.$.pages.selectNext()}, 20000);
+this.async(function(){this.$.pages.selectNext()}, 30000);
+this.async(function(){this.$.pages.selectNext()}, 40000);
+this.async(function(){this.$.pages.selectNext()}, 50000);
+this.async(function(){this.$.pages.selectNext()}, 60000);
+this.async(function(){this.$.pages.selectNext()}, 70000);
+this.async(function(){this.$.pages.selectNext()}, 80000);
+this.async(function(){this.$.pages.selectNext()}, 90000);
+this.async(function(){this.$.pages.selectNext()}, 100000);
+this.async(function(){this.$.pages.selectNext()}, 110000);
+this.async(function(){this.$.pages.selectNext()}, 120000);
+this.async(function(){this.$.pages.selectNext()}, 130000);
+this.async(function(){this.$.pages.selectNext()}, 140000);
+this.async(function(){this.$.pages.selectNext()}, 150000);
+this.async(function(){this.$.pages.selectNext()}, 160000);
+this.async(function(){this.$.pages.selectNext()}, 170000);
+this.async(function(){this.$.pages.selectNext()}, 180000);
+this.async(function(){this.$.pages.selectNext()}, 190000);
+this.async(function(){this.$.pages.selectNext()}, 200000);
+this.async(function(){this.$.pages.selectNext()}, 210000);
+this.async(function(){this.$.pages.selectNext()}, 220000);
+this.async(function(){this.$.pages.selectNext()}, 230000);
+this.async(function(){this.$.pages.selectNext()}, 240000);
+this.async(function(){this.$.pages.selectNext()}, 250000);
+this.async(function(){this.$.pages.selectNext()}, 260000);
+this.async(function(){this.$.pages.selectNext()}, 270000);
+this.async(function(){this.$.pages.selectNext()}, 280000);
+this.async(function(){this.$.pages.selectNext()}, 290000);
+this.async(function(){this.$.pages.selectNext()}, 300000);
+this.async(function(){this.$.pages.selectNext()}, 310000);
+this.async(function(){this.$.pages.selectNext()}, 320000);
+this.async(function(){this.$.pages.selectNext()}, 330000);
+this.async(function(){this.$.pages.selectNext()}, 340000);
+this.async(function(){this.$.pages.selectNext()}, 350000);
+this.async(function(){this.$.pages.selectNext()}, 360000);
+this.async(function(){this.$.pages.selectNext()}, 370000);
+this.async(function(){this.$.pages.selectNext()}, 380000);
+this.async(function(){this.$.pages.selectNext()}, 390000);
+this.async(function(){this.$.pages.selectNext()}, 400000);
+this.async(function(){this.$.pages.selectNext()}, 410000);
+this.async(function(){this.$.pages.selectNext()}, 420000);
+this.async(function(){this.$.pages.selectNext()}, 430000);
+this.async(function(){this.$.pages.selectNext()}, 440000);
+this.async(function(){this.$.pages.selectNext()}, 450000);
+this.async(function(){this.$.pages.selectNext()}, 460000);
+
+      },
+
+
+    });
+
+
+
+  </script>
+</dom-module>

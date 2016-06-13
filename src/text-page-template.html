@@ -1,0 +1,41 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+
+
+<dom-module id="text-page-template">
+
+  <template>
+
+    <iron-media-query query="min-width: 767px" query-matches="{{!smallScreen}}">
+    </iron-media-query>
+
+    <style include="shared-styles"></style>
+
+    <style include="iron-flex iron-flex-alignment"></style>
+
+    <div class="page">
+
+      <paper-material elevation="1">
+        <div class="page-content">
+          <h1 class="page-banner-heading">{{heading}}</h1>
+          <div class="text">
+            <content></content>
+          </div>
+        </div>
+      </paper-material>
+
+    </div>
+
+
+
+
+  </template>
+  <script>
+  Polymer({
+    is: 'text-page-template'
+  });
+  </script>
+</dom-module>

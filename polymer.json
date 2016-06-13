@@ -1,0 +1,11 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/judith-nissen.html",
+  "fragments": [
+    "src/home-page.html",
+    "src/about-page.html",
+    "src/projects-page.html",
+    "src/commissions-page.html",
+    "src/contact-page.html"
+  ]
+}

@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="text-page-template.html">
+<link rel="import" href="jn-promo.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="home-page">
+
+  <template>
+
+    <style include="shared-styles">
+
+    </style>
+
+    <style include="iron-flex iron-flex-alignment"></style>
+
+    <text-page-template heading="Welcome...">
+      <p>
+        Are you interested in your organisation’s or family’s history? Would you like to know the age of your house or other building and some of its stories? Do you need historical research into land tenure to support a construction or mining project? Is your organisation’s archive in need of a significance assessment?
+      </p><p>
+        Perhaps you are planning a display in your museum, corporate office or community facility and need an engaging and accurate historical foundation. Or you may be distant from Brisbane and seek a trained historian to locate and copy archival and library materials you need for your historical project.
+      </p>
+
+      <jn-promo></jn-promo>
+
+      <p>
+        Let me bring my professional skills to your particular project. My role is to help you engage with the past and to tell your story in way which best suits your desired end product, timing and budget.
+      </p><p>
+        Researching and presenting your history may be a new experience. There are many aspects to consider, so feel free to contact me to discuss these, be it choosing the best format, the length of the work, setting a budget, how you can contribute to the final product, and so on.
+      </p>
+    </text-page-template>
+
+  </template>
+  <script>
+  Polymer({
+    is: 'home-page'
+  });
+  </script>
+</dom-module>
